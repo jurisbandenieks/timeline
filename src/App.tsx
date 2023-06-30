@@ -1,11 +1,12 @@
-import { Timeline } from "./components/Timeline";
+import { resources } from './assets/data'
+import { Timeline } from './components'
 
 function App() {
   return (
     <div className="app">
-      <Timeline />
+      <Timeline resources={resources} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
