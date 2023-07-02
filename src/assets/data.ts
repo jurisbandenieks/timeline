@@ -14,4 +14,16 @@ export const resources: Resource[] = [
       },
     ],
   },
+  {
+    id: '2',
+    title: 'Bruce Banner',
+    events: [
+      {
+        start: addDays(new Date(), -5),
+        end: addDays(new Date(), 10),
+        color: '#E6EE9C',
+        title: 'Sick',
+      },
+    ],
+  },
 ]

@@ -29,6 +29,10 @@
   white-space: nowrap;
 }
 
+.freeze-table tbody tr {
+  margin-bottom: 10px; /* Adjust the desired gap size */
+}
+
 .freeze-table th {
   padding: 0 12px;
   border-bottom: #e0e0e0 solid 2px;
@@ -55,4 +59,24 @@
 
 .container::-webkit-scrollbar-track:hover {
   background-color: #ddd; /* Background color of the scrollbar track on hover */
+}
+
+.event-cell {
+  padding: 6px 0;
+}
+
+.duration {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+  background-color: #dfb11a;
+  cursor: pointer;
+}
+
+.start {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.end {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

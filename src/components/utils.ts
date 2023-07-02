@@ -50,3 +50,15 @@ export const addDays = (date: Date, days: number): Date => {
   newDate.setDate(currentDate.getDate() + days)
   return newDate
 }
+
+export const getDatesInRange = (startDate: Date, endDate: Date): Date[] => {
+  const datesInRange: Date[] = []
+  const currentDate = new Date(startDate)
+
+  while (currentDate <= endDate) {
+    datesInRange.push(new Date(currentDate))
+    currentDate.setDate(currentDate.getDate() + 1)
+  }
+
+  return datesInRange
+}
