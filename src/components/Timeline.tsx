@@ -1,21 +1,59 @@
+import { useState } from 'react'
 import {
   formatDate,
   getDaysInMonth,
   getYearAndMonth,
   useTimelineEffect,
   Resource,
+  formatMonthYear,
+  MonthYear,
 } from './'
 
 interface Props {
   resources: Resource[]
   onClick: (data: Resource | undefined) => void
+  onUpdateDate: (date: MonthYear) => void
 }
 
-export const Timeline: React.FC<Props> = ({ resources, onClick }) => {
-  const currYearAndMont = getYearAndMonth()
-  const daysInMonth = getDaysInMonth(currYearAndMont)
+export const Timeline: React.FC<Props> = ({
+  resources,
+  onClick,
+  onUpdateDate,
+}) => {
+  const [monthYear, setMonthYear] = useState(getYearAndMonth())
+  const [daysInMonth, setDaysInMonth] = useState(getDaysInMonth(monthYear))
 
-  useTimelineEffect(resources)
+  useTimelineEffect(resources, monthYear)
+
+  const handleBack = () => {
+    let date
+    if (monthYear.month <= 1) {
+      date = { month: 12, year: monthYear.year - 1 }
+    } else {
+      date = { ...monthYear, month: monthYear.month - 1 }
+    }
+    updateDate(date)
+  }
+
+  const handleForward = () => {
+    let date
+    if (monthYear.month >= 12) {
+      date = { month: 1, year: monthYear.year + 1 }
+    } else {
+      date = { ...monthYear, month: monthYear.month + 1 }
+    }
+    updateDate(date)
+  }
+
+  const handleToday = () => {
+    updateDate()
+  }
+
+  const updateDate = (date: MonthYear = getYearAndMonth()) => {
+    setMonthYear(date)
+    setDaysInMonth(getDaysInMonth(date))
+    onUpdateDate(date)
+  }
 
   const handleClick = (event: React.MouseEvent<HTMLTableCellElement>) => {
     let data
@@ -27,8 +65,22 @@ export const Timeline: React.FC<Props> = ({ resources, onClick }) => {
   }
 
   return (
-    <div className="container">
-      <table className="freeze-table">
+    <div className="timeline-container">
+      <div className="timeline-headline">
+        <span className="month-year">{formatMonthYear(monthYear)}</span>
+        <div className="timeline-actions">
+          <button className="btn btn-back" onClick={handleBack}>
+            {'<'}
+          </button>
+          <button className="btn btn-today" onClick={handleToday}>
+            Today
+          </button>
+          <button className="btn btn-forward" onClick={handleForward}>
+            {'>'}
+          </button>
+        </div>
+      </div>
+      <table className="timeline-table">
         <thead>
           <tr>
             <th>&nbsp;</th>

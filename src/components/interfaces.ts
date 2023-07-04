@@ -10,3 +10,8 @@ export interface Event {
   title: string
   color?: string
 }
+
+export interface MonthYear {
+  month: number
+  year: number
+}

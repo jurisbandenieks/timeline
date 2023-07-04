@@ -1,14 +1,22 @@
 import { resources } from './assets/data'
-import { Resource, Timeline } from './components'
+import { MonthYear, Resource, Timeline } from './components'
 
 function App() {
   const handleClick = (data: Resource | undefined) => {
     console.log(data)
   }
 
+  const handleUpdateDate = (date: MonthYear) => {
+    console.log(date)
+  }
+
   return (
     <div className="app">
-      <Timeline resources={resources} onClick={handleClick} />
+      <Timeline
+        resources={resources}
+        onClick={handleClick}
+        onUpdateDate={handleUpdateDate}
+      />
     </div>
   )
 }

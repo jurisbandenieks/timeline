@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('./button.css');
 
-.container {
+.timeline-container {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,12 +14,29 @@
   border-radius: 5px;
 }
 
-.freeze-table {
+.timeline-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 24px 36px;
+  font-weight: 500;
+}
+
+.timeline-actions {
+  display: flex;
+  align-items: center;
+}
+
+.timeline-actions .btn:not(:last-child) {
+  margin-right: 12px;
+}
+
+.timeline-table {
   border-collapse: collapse;
 }
 
-.freeze-table th:first-child,
-.freeze-table tr td:first-child {
+.timeline-table th:first-child,
+.timeline-table tr td:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
@@ -28,7 +46,7 @@
   white-space: nowrap;
 }
 
-.freeze-table th {
+.timeline-table th {
   padding: 0 12px;
   border-bottom: #e0e0e0 solid 2px;
 }
@@ -81,12 +99,12 @@
   border-bottom-right-radius: 5px;
 }
 
-.freeze-table tbody tr {
+.timeline-table tbody tr {
   position: relative;
 }
 
-.freeze-table tbody .event-cell::before,
-.freeze-table tbody .event-cell::after {
+.timeline-table tbody .event-cell::before,
+.timeline-table tbody .event-cell::after {
   content: '';
   position: absolute;
   left: 0;
@@ -95,10 +113,10 @@
   background-color: #fafafa;
 }
 
-.freeze-table tbody .event-cell::before {
+.timeline-table tbody .event-cell::before {
   top: 0;
 }
 
-.freeze-table tbody .event-cell::after {
+.timeline-table tbody .event-cell::after {
   bottom: 0;
 }

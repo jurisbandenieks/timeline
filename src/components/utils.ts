@@ -1,4 +1,6 @@
-export const getDaysInMonth = ({ year, month }: { year: number; month: number }): Date[] => {
+import { MonthYear } from '.'
+
+export const getDaysInMonth = ({ year, month }: MonthYear): Date[] => {
   const daysInMonth: Date[] = []
   const startDate = new Date(year, month - 1, 1) // month is zero-based in JavaScript
 
@@ -10,7 +12,7 @@ export const getDaysInMonth = ({ year, month }: { year: number; month: number })
   return daysInMonth
 }
 
-export const getYearAndMonth = (date = new Date()): { year: number; month: number } => {
+export const getYearAndMonth = (date = new Date()): MonthYear => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1 // Months are zero-based, so we add 1
 
@@ -61,4 +63,15 @@ export const getDatesInRange = (startDate: Date, endDate: Date): Date[] => {
   }
 
   return datesInRange
+}
+
+export const formatMonthYear = ({ month, year }: MonthYear) => {
+  const formattedDate = new Date(year, month - 1).toLocaleString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+  })
+
+  const [formattedMonth, formattedYear] = formattedDate.split(' ')
+
+  return `${formattedMonth}/${formattedYear}`
 }

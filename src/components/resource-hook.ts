@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
-import { Resource, getDatesInRange } from './'
+import { MonthYear, Resource, getDatesInRange } from './'
 
-export const useTimelineEffect = (resources: Resource[]) => {
+export const useTimelineEffect = (
+  resources: Resource[],
+  monthYear: MonthYear,
+) => {
   useEffect(() => {
     resources.forEach((item) => {
       item.events.forEach((event) => {
@@ -36,5 +39,5 @@ export const useTimelineEffect = (resources: Resource[]) => {
         }
       })
     })
-  }, [resources])
+  }, [resources, monthYear])
 }
