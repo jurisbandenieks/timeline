@@ -25,12 +25,7 @@
   background-color: #fafafa; /* Set the background color as needed */
   padding: 6px 32px;
   width: 100%;
-  border-right: #e0e0e0 solid 2px;
   white-space: nowrap;
-}
-
-.freeze-table tbody tr {
-  margin-bottom: 10px; /* Adjust the desired gap size */
 }
 
 .freeze-table th {
@@ -63,6 +58,11 @@
 
 .event-cell {
   padding: 6px 0;
+  color: transparent;
+  max-width: 24px;
+  max-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .duration {
@@ -79,4 +79,26 @@
 .end {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.freeze-table tbody tr {
+  position: relative;
+}
+
+.freeze-table tbody .event-cell::before,
+.freeze-table tbody .event-cell::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fafafa;
+}
+
+.freeze-table tbody .event-cell::before {
+  top: 0;
+}
+
+.freeze-table tbody .event-cell::after {
+  bottom: 0;
 }

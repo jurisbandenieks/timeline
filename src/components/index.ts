@@ -1,2 +1,5 @@
-import "./styles.css";
-export * from "./Timeline";
+import './styles.css'
+export * from './Timeline'
+export * from './interfaces'
+export * from './utils'
+export * from './resource-hook'

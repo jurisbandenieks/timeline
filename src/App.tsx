@@ -1,10 +1,14 @@
 import { resources } from './assets/data'
-import { Timeline } from './components'
+import { Resource, Timeline } from './components'
 
 function App() {
+  const handleClick = (data: Resource | undefined) => {
+    console.log(data)
+  }
+
   return (
     <div className="app">
-      <Timeline resources={resources} />
+      <Timeline resources={resources} onClick={handleClick} />
     </div>
   )
 }

@@ -1,53 +1,30 @@
-import { useEffect } from 'react'
-import { formatDate, getDatesInRange, getDaysInMonth, getYearAndMonth } from './utils'
+import {
+  formatDate,
+  getDaysInMonth,
+  getYearAndMonth,
+  useTimelineEffect,
+  Resource,
+} from './'
 
-export interface Resource {
-  id: string
-  title: string
-  events: Event[]
-}
-
-export interface Event {
-  start: Date
-  end?: Date
-  title: string
-  color?: string
-}
 interface Props {
   resources: Resource[]
+  onClick: (data: Resource | undefined) => void
 }
 
-export const Timeline: React.FC<Props> = ({ resources }) => {
-  console.log(resources)
+export const Timeline: React.FC<Props> = ({ resources, onClick }) => {
   const currYearAndMont = getYearAndMonth()
   const daysInMonth = getDaysInMonth(currYearAndMont)
 
-  useEffect(() => {
-    resources.forEach((item) => {
-      item.events.forEach((event) => {
-        const startCell = document.getElementById(`${event.start.toDateString()}-${item.id}`)
-        if (startCell) {
-          startCell.classList.add('duration')
-          startCell.classList.add('start')
-        }
+  useTimelineEffect(resources)
 
-        if (event.end) {
-          const range = getDatesInRange(event.start, event.end)
-          range.forEach((day) => {
-            const durationCell = document.getElementById(`${day.toDateString()}-${item.id}`)
-            if (durationCell) {
-              durationCell.classList.add('duration')
-            }
-          })
-
-          const end = document.getElementById(`${event.end.toDateString()}-${item.id}`)
-          if (end) {
-            end.classList.add('end')
-          }
-        }
-      })
-    })
-  }, [resources])
+  const handleClick = (event: React.MouseEvent<HTMLTableCellElement>) => {
+    let data
+    const { textContent } = event.currentTarget
+    if (textContent) {
+      data = JSON.parse(textContent as string)
+    }
+    onClick(data)
+  }
 
   return (
     <div className="container">
@@ -69,6 +46,7 @@ export const Timeline: React.FC<Props> = ({ resources }) => {
                   key={`${day.toDateString()}-${item.id}`}
                   id={`${day.toDateString()}-${item.id}`}
                   className="event-cell"
+                  onClick={handleClick}
                 ></td>
               ))}
             </tr>
