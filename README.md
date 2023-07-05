@@ -1,4 +1,4 @@
-![build](https://github.com/jurisbandenieks/timeline/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![build](https://github.com/jurisbandenieks/timeline/actions/workflows/workflows/badge.svg)
 
 # React Timeline manager component
 
