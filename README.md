@@ -1,4 +1,4 @@
-#React Timeline manager component
+# React Timeline manager component
 
 View and manage resources on a timeline
 
