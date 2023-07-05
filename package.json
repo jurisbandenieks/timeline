@@ -32,5 +32,9 @@
     "react-dom": "^18.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jurisbandenieks/timeline"
   }
 }
