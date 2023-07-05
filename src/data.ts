@@ -1,4 +1,4 @@
-import { Resource, addDays } from '../components'
+import { Resource, addDays } from './'
 
 export const resources: Resource[] = [
   {

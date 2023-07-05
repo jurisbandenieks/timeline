@@ -4,16 +4,10 @@ import {
   getDaysInMonth,
   getYearAndMonth,
   useTimelineEffect,
-  Resource,
   formatMonthYear,
   MonthYear,
+  Props,
 } from './'
-
-interface Props {
-  resources: Resource[]
-  onClick: (data: Resource | undefined) => void
-  onUpdateDate: (date: MonthYear) => void
-}
 
 export const Timeline: React.FC<Props> = ({
   resources,

@@ -1,5 +1,5 @@
-import { resources } from './assets/data'
-import { MonthYear, Resource, Timeline } from './components'
+import { resources } from './data'
+import { MonthYear, Resource, Timeline } from './'
 
 function App() {
   const handleClick = (data: Resource | undefined) => {
