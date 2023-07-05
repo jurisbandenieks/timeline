@@ -2,6 +2,7 @@
 @import url('./button.css');
 
 .timeline-container {
+  position: relative;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,6 +16,9 @@
 }
 
 .timeline-headline {
+  position: sticky;
+  z-index: 1;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -28,3 +28,4 @@ tsconfig.node.json
 *.sln
 *.sw?
 .prettierrc
+.github
