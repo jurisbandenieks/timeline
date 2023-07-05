@@ -1,22 +1,36 @@
-Timeline Props
+#React Timeline manager component
 
-Event {
+View and manage resources on a timeline
+
+No dependancies used
+
+## Used Types
+
+`Event {
   start: Date
   end?: Date
   title: string
   color?: string
-}
+}`
 
-Resource {
+`Resource {
   id: string
   title: string
   events: Event[]
-}
+}`
 
-MonthYear {
+`MonthYear {
   month: number
   year: number
-}
+}`
 
-handleClick(data: Resource) => void
-handleUpdateDate(data: MonthYear) => void
+`handleClick(data: Resource) => void
+handleUpdateDate(data: MonthYear) => void`
+
+## Timeline Props
+
+`<Timeline
+  resources={resources}
+  onClick={handleClick}
+  onUpdateDate={handleUpdateDate}
+/>`

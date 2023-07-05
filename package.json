@@ -1,6 +1,12 @@
 {
   "name": "timeline-manager",
   "author": "Juris Bandenieks",
+  "keywords": [
+    "react",
+    "timeline",
+    "managment",
+    "calendar"
+  ],
   "private": false,
   "version": "0.1.1",
   "type": "module",
