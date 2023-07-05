@@ -9,6 +9,13 @@ lerna-debug.log*
 
 node_modules
 *.local
+package-lock.json
+src/App.tsx
+src/maint.tsx
+vite.config.json
+tsconfig.json
+tsconfig.node.json
+.eslintrc.cjs
 
 # Editor directories and files
 .vscode/*
