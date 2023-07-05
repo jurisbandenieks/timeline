@@ -1,3 +1,5 @@
+![build](https://github.com/jurisbandenieks/timeline/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+
 # React Timeline manager component
 
 View and manage resources on a timeline
