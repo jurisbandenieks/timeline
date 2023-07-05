@@ -1,17 +1,17 @@
-export interface Resource {
+export type Resource = {
   id: string
   title: string
   events: Event[]
 }
 
-export interface Event {
+export type Event = {
   start: Date
   end?: Date
   title: string
   color?: string
 }
 
-export interface MonthYear {
+export type MonthYear = {
   month: number
   year: number
 }
