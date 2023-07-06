@@ -17,12 +17,13 @@
 
 .timeline-headline {
   position: sticky;
+  left: 0;
   z-index: 1;
   width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 24px 36px;
+  padding: 0 24px;
   font-weight: 500;
 }
 
@@ -37,6 +38,7 @@
 
 .timeline-table {
   border-collapse: collapse;
+  margin-top: 36px;
 }
 
 .timeline-table th:first-child,
