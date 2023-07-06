@@ -14,6 +14,7 @@ export const useTimelineEffect = (
         if (startCell) {
           startCell.classList.add('duration')
           startCell.classList.add('start')
+          startCell.style.backgroundColor = event.color ?? '#000'
           startCell.textContent = JSON.stringify(item)
         }
 
@@ -25,6 +26,7 @@ export const useTimelineEffect = (
             )
             if (durationCell) {
               durationCell.classList.add('duration')
+              durationCell.style.backgroundColor = event.color ?? '#000'
               durationCell.textContent = JSON.stringify(item)
             }
           })
@@ -34,6 +36,7 @@ export const useTimelineEffect = (
           )
           if (end) {
             end.classList.add('end')
+            end.style.backgroundColor = event.color ?? '#000'
             end.textContent = JSON.stringify(item)
           }
         }
