@@ -52,8 +52,8 @@ export const Timeline: React.FC<Props> = ({
   const handleClick = (event: React.MouseEvent<HTMLTableCellElement>) => {
     let data
     const { textContent } = event.currentTarget
-    if (textContent) {
-      data = JSON.parse(textContent as string)
+    if (textContent && typeof textContent === 'string') {
+      data = JSON.parse(textContent)
     }
     onClick(data)
   }
