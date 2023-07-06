@@ -11,7 +11,7 @@
   background-color: #fafafa;
   padding: 18px 18px 18px 0;
   margin: 24px 24px 24px 24px;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: auto;
   border-radius: 5px;
 }
 
