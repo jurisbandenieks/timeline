@@ -1,11 +1,16 @@
 import { MonthYear } from '.'
 
-export const getDaysInMonth = ({ year, month }: MonthYear): Date[] => {
+export const getDaysInMonth = (
+  { year, month }: MonthYear,
+  hasWeekends = true,
+): Date[] => {
   const daysInMonth: Date[] = []
   const startDate = new Date(year, month - 1, 1) // month is zero-based in JavaScript
 
   while (startDate.getMonth() === month - 1) {
-    daysInMonth.push(new Date(startDate))
+    if (hasWeekends || (!hasWeekends && !isWeekend(startDate))) {
+      daysInMonth.push(new Date(startDate))
+    }
     startDate.setDate(startDate.getDate() + 1)
   }
 
@@ -79,16 +84,4 @@ export const formatMonthYear = ({ month, year }: MonthYear) => {
 export const isWeekend = (date: Date): boolean => {
   const dayOfWeek = date.getDay() // 0 (Sunday) to 6 (Saturday)
   return dayOfWeek === 0 || dayOfWeek === 6
-}
-
-export const makeBackgroundMoreTransparent = (
-  elementId: string,
-  opacity: number,
-) => {
-  const element = document.getElementById(elementId)
-  if (element) {
-    const currentBgColor = element.style.backgroundColor
-    const newBgColor = `rgba(${currentBgColor}, ${opacity})`
-    element.style.backgroundColor = newBgColor
-  }
 }

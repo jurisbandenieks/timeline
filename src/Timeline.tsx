@@ -16,6 +16,7 @@ export const Timeline: React.FC<Props> = ({
 }) => {
   const [monthYear, setMonthYear] = useState(getYearAndMonth())
   const [daysInMonth, setDaysInMonth] = useState(getDaysInMonth(monthYear))
+  const [hasWeekends, setHasWeekends] = useState(true)
 
   useTimelineEffect(resources, monthYear)
 
@@ -45,7 +46,7 @@ export const Timeline: React.FC<Props> = ({
 
   const updateDate = (date: MonthYear = getYearAndMonth()) => {
     setMonthYear(date)
-    setDaysInMonth(getDaysInMonth(date))
+    setDaysInMonth(getDaysInMonth(date, hasWeekends))
     onUpdateDate(date)
   }
 
