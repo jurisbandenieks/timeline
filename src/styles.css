@@ -83,8 +83,8 @@
 .event-cell {
   padding: 6px 0;
   color: transparent;
-  max-width: 24px;
-  max-height: 24px;
+  max-width: 12px;
+  max-height: 12px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -125,4 +125,8 @@
 
 .timeline-table tbody .event-cell::after {
   bottom: 0;
+}
+
+.weekend {
+  background-color: rgba(255, 0, 0, 0.3);
 }

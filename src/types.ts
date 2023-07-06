@@ -9,6 +9,7 @@ export type Event = {
   end?: Date
   title: string
   color?: string
+  description?: string
 }
 
 export type MonthYear = {

@@ -75,3 +75,20 @@ export const formatMonthYear = ({ month, year }: MonthYear) => {
 
   return `${formattedMonth}/${formattedYear}`
 }
+
+export const isWeekend = (date: Date): boolean => {
+  const dayOfWeek = date.getDay() // 0 (Sunday) to 6 (Saturday)
+  return dayOfWeek === 0 || dayOfWeek === 6
+}
+
+export const makeBackgroundMoreTransparent = (
+  elementId: string,
+  opacity: number,
+) => {
+  const element = document.getElementById(elementId)
+  if (element) {
+    const currentBgColor = element.style.backgroundColor
+    const newBgColor = `rgba(${currentBgColor}, ${opacity})`
+    element.style.backgroundColor = newBgColor
+  }
+}

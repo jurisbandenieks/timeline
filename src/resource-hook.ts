@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { MonthYear, Resource, getDatesInRange } from './'
+import { MonthYear, Resource, getDatesInRange, isWeekend } from './'
 
 export const useTimelineEffect = (
   resources: Resource[],
@@ -15,6 +15,7 @@ export const useTimelineEffect = (
           startCell.classList.add('duration')
           startCell.classList.add('start')
           startCell.style.backgroundColor = event.color ?? '#000'
+          if (isWeekend(event.start)) startCell.style.opacity = '0.3'
           startCell.textContent = JSON.stringify(item)
         }
 
@@ -27,6 +28,7 @@ export const useTimelineEffect = (
             if (durationCell) {
               durationCell.classList.add('duration')
               durationCell.style.backgroundColor = event.color ?? '#000'
+              if (isWeekend(day)) durationCell.style.opacity = '0.3'
               durationCell.textContent = JSON.stringify(item)
             }
           })
@@ -37,6 +39,7 @@ export const useTimelineEffect = (
           if (end) {
             end.classList.add('end')
             end.style.backgroundColor = event.color ?? '#000'
+            if (isWeekend(event.end)) end.style.opacity = '0.3'
             end.textContent = JSON.stringify(item)
           }
         }

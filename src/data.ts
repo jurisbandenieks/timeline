@@ -25,4 +25,16 @@ export const resources: Resource[] = [
       },
     ],
   },
+  {
+    id: '3',
+    title: 'Moe Lester',
+    events: [
+      {
+        start: addDays(new Date(), 1),
+        end: addDays(new Date(), 2),
+        color: '#C3df',
+        title: 'Sick',
+      },
+    ],
+  },
 ]
