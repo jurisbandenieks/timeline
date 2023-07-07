@@ -19,11 +19,11 @@ function App() {
         onUpdateDate={handleUpdateDate}
       />
 
-      {/* <EventManager
+      <EventManager
         resources={resources}
         onClick={handleClick}
         onUpdateDate={handleUpdateDate}
-      /> */}
+      />
     </div>
   )
 }

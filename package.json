@@ -55,6 +55,6 @@
     "url": "https://github.com/jurisbandenieks/timeline"
   },
   "dependencies": {
-    "@event-manager/react": "^0.1.16"
+    "@event-manager/react": "^0.1.23"
   }
 }
