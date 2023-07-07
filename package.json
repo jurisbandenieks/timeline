@@ -1,5 +1,5 @@
 {
-  "name": "@event-manager/react",
+  "name": "timeline",
   "author": "Juris Bandenieks",
   "keywords": [
     "react",
@@ -55,6 +55,6 @@
     "url": "https://github.com/jurisbandenieks/timeline"
   },
   "dependencies": {
-    "@event-manager/react": "^0.1.8"
+    "@event-manager/react": "^0.1.16"
   }
 }

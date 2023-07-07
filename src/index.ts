@@ -1,5 +1,4 @@
-import './styles.css'
-export * from './EventManager'
+export * from './Timeline'
 export * from './types'
 export * from './utils'
 export * from './resource-hook'
