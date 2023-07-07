@@ -7,16 +7,16 @@ import {
   formatMonthYear,
   MonthYear,
   Props,
-} from './'
+} from '.'
 
-export const Timeline: React.FC<Props> = ({
+export const EventManager: React.FC<Props> = ({
   resources,
   onClick,
   onUpdateDate,
 }) => {
   const [monthYear, setMonthYear] = useState(getYearAndMonth())
   const [daysInMonth, setDaysInMonth] = useState(getDaysInMonth(monthYear))
-  const [hasWeekends, setHasWeekends] = useState(true)
+  const hasWeekends = true
 
   useTimelineEffect(resources, monthYear)
 

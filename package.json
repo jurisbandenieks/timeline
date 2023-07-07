@@ -1,5 +1,5 @@
 {
-  "name": "timeline-manager",
+  "name": "@event-manager/react",
   "author": "Juris Bandenieks",
   "keywords": [
     "react",
@@ -14,6 +14,11 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -34,7 +39,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.1.1"
   },
   "exports": {
     "./package.json": "./package.json",
@@ -47,5 +53,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jurisbandenieks/timeline"
+  },
+  "dependencies": {
+    "@event-manager/react": "^0.1.8"
   }
 }
