@@ -21,6 +21,7 @@ function App() {
 
       <EventManager
         resources={resources}
+        id={2}
         onClick={handleClick}
         onUpdateDate={handleUpdateDate}
       />
