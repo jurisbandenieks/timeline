@@ -1,9 +1,9 @@
 import { resources } from './data'
 import { MonthYear, Resource, Timeline } from './'
-import { EventManager } from '@event-manager/react'
+import { ClickData, EventManager } from '@event-manager/react'
 
 function App() {
-  const handleClick = (data: Resource | undefined) => {
+  const handleClick = (data: ClickData | Resource | undefined) => {
     console.log(data)
   }
 
@@ -21,7 +21,8 @@ function App() {
 
       <EventManager
         resources={resources}
-        id={2}
+        tableId={2}
+        showTooltip
         onClick={handleClick}
         onUpdateDate={handleUpdateDate}
       />
